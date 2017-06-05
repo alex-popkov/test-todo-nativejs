@@ -109,7 +109,11 @@ ToDoList.prototype.addItemListener = function( e ){
 ToDoList.prototype.deleteItemListener = function( e ){
 
 	var id = +e.target.parentElement.getAttribute( 'id' );
-	this.deleteItemFromModel( id );
+
+	if( e.target.getAttribute( 'data-delete' ) ){
+
+		this.deleteItemFromModel( id );
+	}
 };
 
 //View methods
@@ -122,13 +126,15 @@ ToDoList.prototype.deleteItemListener = function( e ){
  */
 ToDoList.prototype.addItemToView = function( title, text, opt_id ){
 
-	var itemNode = document.createElement( "div" );
-	itemNode.className = 'item mdl-card mdl-shadow--2dp';
-	itemNode.id = '' + this.id;
-
-	var itemId = document.createElement( "div" );
 	var id;
 	opt_id ? id = '' + opt_id : id = '' + this.id;
+
+	var itemNode = document.createElement( "div" );
+	itemNode.className = 'item mdl-card mdl-shadow--2dp';
+	itemNode.id = id;
+
+	var itemId = document.createElement( "div" );
+	
 	itemId.className = 'item--id';
 	itemId.innerHTML = id;
 
@@ -142,6 +148,7 @@ ToDoList.prototype.addItemToView = function( title, text, opt_id ){
 
 	var btn = document.createElement( "button" );
 	btn.className = 'item--delete mdl-button mdl-js-button';
+	btn.setAttribute( "data-delete", "true" );
 	btn.innerHTML = 'Delete';
 
 	itemNode.appendChild( itemId );
