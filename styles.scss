@@ -1,0 +1,48 @@
+.mdl-navigation {
+
+	button {
+
+		margin-right: 10px;
+		color: white;
+	}
+}
+
+button#add-item {
+
+	width: 100px;
+	margin: 0 auto;
+}
+.page-content {
+
+	padding: 20px;
+	.mdl-card {
+
+		width: 512px;
+		margin: 0 auto;
+		padding: 10px;
+		.mdl-textfield {
+
+			width: 100%;
+		}
+	}
+	.items {
+
+		margin: 20px auto 0;
+		.item {
+
+			width: 512px;
+			min-height: auto;
+			margin: 0 auto 20px;
+			padding: 20px;
+			div {
+
+				margin-bottom: 10px;
+			}
+			button {
+
+				margin: 0 auto;
+				width: 100px;
+			}
+		}
+	}
+}
