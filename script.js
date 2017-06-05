@@ -24,7 +24,7 @@ var bootstrap = function( ){
 			{
 				id: this.id,
 				title: 'Hire this cool guy',
-				text: 'He built exellent application using pure JavaScript'
+				text: 'He built excellent application using pure JavaScript'
 			}
 	 	]
 
