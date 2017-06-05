@@ -205,7 +205,7 @@ var bootstrap = function( ){
 	};
 
 	/**
-	 * Delete item from view
+	 * Delete item from model
 	 * @param {number} id
 	 */
 	ToDoList.prototype.deleteItemFromModel = function( id ){
