@@ -44,6 +44,7 @@ ToDoList.prototype.setupListeners = function( ){
 	document.getElementById( 'sort-by-id' ).addEventListener( "click", this.sortByIdListener.bind( this ) );
 	document.getElementById( 'sort-by-title' ).addEventListener( "click", this.sortByTitleListener.bind( this ) );
 	document.getElementById( 'add-item' ).addEventListener( "click", this.addItemListener.bind( this ) );
+	document.getElementsByClassName( 'items' )[ 0 ].addEventListener( "click", this.deleteItemListener.bind( this ) );
 };
 
 
@@ -148,8 +149,6 @@ ToDoList.prototype.addItemToView = function( title, text, opt_id ){
 	itemNode.appendChild( itemText );
 	itemNode.appendChild( btn );
 	this.root.appendChild( itemNode );
-
-	btn.addEventListener( "click", this.deleteItemListener.bind( this ) );
 };
 
 /**
